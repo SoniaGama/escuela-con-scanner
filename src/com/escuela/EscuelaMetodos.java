@@ -18,14 +18,11 @@ public class EscuelaMetodos implements InterfaceEscuela {
 	
 	@Override
 	public void addAlumno(Map<String, Integer> hash, String nacionalidad) {
-		//no se puede inicializar en 1 o 0 por que en cada add reinicia el contador	
-		//AÃ±ade la nacionalidad de un nuevo alumno
+		//Añade la nacionalidad de un nuevo alumno
 		Integer value = hash.get(nacionalidad); 
 		if(hash.containsKey(nacionalidad)) {
 			value++;
 			hash.put(nacionalidad, value);				
-		} else {
-			System.out.println("Nacionalidad no encontrada");
 		}
 	}
 	

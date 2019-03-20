@@ -6,22 +6,22 @@ import java.util.Scanner;
 public class ElegirMetodo extends EscuelaMetodos {
 	EscuelaMetodos metodos = new EscuelaMetodos();
 
-	public void texto() {
-		System.out.println("Que desea hacer: \n" 
+	public void texto() {	
+		System.out.println("Que desea hacer: \n"
 				+ " 1: Añadir la nacionalidad de un nuevo alumno \n "
 				+ "2: Ver el numero de alumnos por nacionalidad \n "
 				+ "3: Ver el numero de alumnos de una nacionalidad \n " 
 				+ "4: Ver las nacionalidades de la escuela \n "
 				+ "5: Borra una nacionalidad \n" 
-				+ "6: Salir");
+				+ "6: Salir"
+				);
 	}
 
 	public void queNacionalidad() {
-		System.out.println("Que nacionalidad: \n" 
-				+ " 1: Mexicana \n " 
-				+ "2: Estadounidense \n " 
-				+ "3: Brasileno \n "
-				+ "4: Peruano");
+		System.out.println("Que nacionalidad: \n" );
+		for(Nacionalidades nacionalidades: Nacionalidades.values()) {
+			System.out.println(nacionalidades.getId() + ": " + nacionalidades.getNacionalidad());		
+		}
 	}
 
 	public void escogerMetodo(Map<String, Integer> hash) {
@@ -37,8 +37,10 @@ public class ElegirMetodo extends EscuelaMetodos {
 			case (1):
 				queNacionalidad();
 				Scanner sc1 = new Scanner(System.in);
-				int opt = sc1.nextInt();
-				switch (opt) {
+				int opNac = sc1.nextInt();
+				addAlumno(hash, Nacionalidades.values());
+				/*
+				switch (opNac) {
 				case (1):
 					addAlumno(hash, Nacionalidades.MEXICANA.toString());
 					break;
@@ -55,6 +57,7 @@ public class ElegirMetodo extends EscuelaMetodos {
 					System.out.println("Opcion no encontrada");
 					break;
 				}
+				*/
 				break;
 
 			case (2):
